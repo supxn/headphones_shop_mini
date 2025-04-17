@@ -1,7 +1,21 @@
 import React from 'react';
 import ProductCard from "./ProductCard";
 
-const PostList = ({ products, title }) => {
+interface Product {
+    id: number;
+    img: string;
+    title: string;
+    price: number;
+    discountPrice?: number;
+    rate?: number;
+    currencySign: string;
+}
+
+interface PostListProps {
+    products: Product[];
+    title: string;
+}
+const ProductList: React.FC<PostListProps> = ({ products, title }) => {
 
     return (
         <div>
@@ -12,8 +26,9 @@ const PostList = ({ products, title }) => {
                         img={product.img}
                         title={product.title}
                         price={product.price}
-                        oldprice={product.oldprice}
+                        discountPrice={product.discountPrice}
                         rate={product.rate}
+                        currencySign={product.currencySign}
                         key={product.id} />
                 )}
             </div>
@@ -21,4 +36,4 @@ const PostList = ({ products, title }) => {
         </div>
     )
 }
-export default PostList;
+export default ProductList;
