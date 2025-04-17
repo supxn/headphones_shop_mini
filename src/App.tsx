@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import ProductList from "./components/ProductList";
 import productphoto from "./components/media/product-photo-1.png";
 import productphoto2 from "./components/media/headphones2.png";
@@ -93,6 +94,7 @@ function App() {
       <Header />
       <ProductList products={headphones}  title={"Наушники"}/>
       <ProductList products={headphones2}  title={"Беспроводные наушники"}/>
+      <Footer/>
     </div>
   );
 }

@@ -1,0 +1,21 @@
+.footerArea{
+    display: flex;
+    height: 149px;
+    padding: 29px;
+    background: white;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    justify-content: space-between;
+}
+.footerArea .footerMenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style: none;
+    font-weight: 400;
+    align-items: stretch;
+}
+.footerArea .footerLogo{
+    font-size: 25px;
+    font-weight: 700;
+}

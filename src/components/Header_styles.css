@@ -3,8 +3,6 @@
  height: 60px;
  max-width: 1110px;
  min-width: 300px;
- border-bottom-left-radius: 15px;
- border-bottom-right-radius: 15px;
  display: flex;
  justify-content: space-between;
  align-items: center;
