@@ -22,7 +22,7 @@ const Footer = function () {
             <ul className={classes.footerMenu}>
                 <li className={classes.menuItem}>Условия сервиса</li>
                 <li className={classes.languageChange}>
-                    <img src={languageIcon} />
+                    <img src={languageIcon} alt='' />
                     <span className={`${classes.languageChangeItem} ${activeLanguage === 'Рус' ? classes.active : ''
                         }`} onClick={e => handleLanguageChange('Рус')}>Рус</span>
 
@@ -31,9 +31,9 @@ const Footer = function () {
                 </li>
             </ul>
             <div className={classes.sochialArea}>
-                <a href="https://vk.com/" target='_blank'><img src={vkIcon}/></a>
-                <a href="https://t.me/" target='_blank'><img src={telegramIcon}/></a>
-                <a href="https://whatsapp.com" target='_blank'><img src={whatsappIcon}/></a>
+                <a href="https://vk.com/" ><img src={vkIcon} alt='vk'/></a>
+                <a href="https://t.me/" ><img src={telegramIcon} alt='telegram'/></a>
+                <a href="https://whatsapp.com" ><img src={whatsappIcon} alt = "whatsapp"/></a>
             </div>
         </div>
     )

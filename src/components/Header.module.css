@@ -8,6 +8,18 @@
  margin-left: auto;
  margin-right: auto;
 }
+.headerArea .logobutton{
+    text-decoration: none;
+    color: black;
+}
+.headerArea .logobutton:hover{
+    color: #939393;
+}
+.headerArea .navbutton .imgContainer:hover{
+    background: #ffffff;
+    border-radius: 50%;
+    padding: 2px;
+}
 .headerArea .headerLogo{
 font-size: 25px;
 font-family: 'Montserrat';
@@ -20,4 +32,27 @@ font-weight: 700;
 }.headerArea .headerMenu li{
     display: inline-block;
     padding: 20px;
+    align-items: baseline;
+}
+.imgContainer{
+    position: relative;
+    align-items: center;
+    display: flex;
+
+}
+.imgContainer img{
+    width: 23px;
+    height: 23px;
+}
+.circle{
+    background-color: #FFA542;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    position: absolute;
+    width: 17.4px;
+    height: 17.4px;
+    top: -25%;
+    right: -40%;
 }

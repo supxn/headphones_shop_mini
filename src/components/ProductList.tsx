@@ -1,21 +1,15 @@
 import React from 'react';
 import ProductCard from "./ProductCard";
+import { Product, CartProduct } from '../types';
 
-interface Product {
-    id: number;
-    img: string;
-    title: string;
-    price: number;
-    discountPrice?: number;
-    rate?: number;
-    currencySign: string;
-}
+
 
 interface PostListProps {
     products: Product[];
     title: string;
+    onAddToCart: (product: Product) => void;
 }
-const ProductList: React.FC<PostListProps> = ({ products, title }) => {
+const ProductList: React.FC<PostListProps> = ({ products, title, onAddToCart }) => {
 
     return (
         <div>
@@ -23,13 +17,9 @@ const ProductList: React.FC<PostListProps> = ({ products, title }) => {
             <div className="product-list">
                 {products.map((product, index) =>
                     <ProductCard
-                        img={product.img}
-                        title={product.title}
-                        price={product.price}
-                        discountPrice={product.discountPrice}
-                        rate={product.rate}
-                        currencySign={product.currencySign}
-                        key={product.id} />
+                    key={product.id}
+                    product={product}
+                    onAddToCart={onAddToCart}/>
                 )}
             </div>
 
