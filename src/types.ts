@@ -8,6 +8,6 @@ export interface Product {
     currencySign: string;
 }
 
-export interface CartProduct extends Pick<Product, 'id' | 'title' | 'price'> {
+export interface CartProduct extends Pick<Product, 'id' | 'title' | 'price'| 'img'> {
     // Дополнительные поля для корзины при необходимости
 }

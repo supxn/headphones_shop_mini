@@ -10,6 +10,7 @@ import productphoto4 from "../components/media/headphones4.png";
 import productphoto5 from "../components/media/headphones5.png";
 import productphoto6 from "../components/media/headphones6.png";
 import { Product, CartProduct } from '../types';
+
 import "../styles/App.css";
 
 
@@ -18,24 +19,43 @@ import "../styles/App.css";
 export interface CatalogProps {
     cartCounter: number;
     setCartCounter: React.Dispatch<React.SetStateAction<number>>;
-  }
+}
 
-  
- 
+
+
 const Catalog = ({ cartCounter, setCartCounter }: CatalogProps) => {
-    
+
     const addToCart = (product: CartProduct) => {
+
         const currentCart = JSON.parse(sessionStorage.getItem('cart') || '[]');
-        const updatedCart = [...currentCart, product];
-        sessionStorage.setItem('cart', JSON.stringify(updatedCart));
-        setCartCounter(updatedCart.length);
+        const existingItem = currentCart.find((item: { id: number; }) => item.id === product.id);
+
+        if (existingItem) {
+            const updatedCart = currentCart.map((item: { id: number; quantity: number; }) =>
+                item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item);
+            sessionStorage.setItem('cart', JSON.stringify(updatedCart));
+            setCartCounter(cartCounter + 1);
+        } else {
+            const newItem = {
+                id: product.id,
+                title: product.title,
+                price: product.price,
+                img: product.img,
+                quantity: 1
+            };
+            const updatedCart = [...currentCart, newItem];
+            sessionStorage.setItem('cart', JSON.stringify(updatedCart));
+            setCartCounter(cartCounter + 1);
+        }
+
         console.log('Товар добавлен:', product);
-      };
-      const handleAddToCart = (product: Product) => {
+    };
+    const handleAddToCart = (product: Product) => {
         addToCart({
             id: product.id,
             title: product.title,
-            price: product.price
+            price: product.price,
+            img: product.img,
         });
     };
     const headphones: Product[] = [
@@ -127,8 +147,8 @@ const Catalog = ({ cartCounter, setCartCounter }: CatalogProps) => {
     return (
         <div className="catalog">
             <Header cartCounter={cartCounter} />
-            <ProductList products={headphones} title={"Наушники"} onAddToCart={handleAddToCart}  />
-            <ProductList products={headphones2} title={"Беспроводные наушники"} onAddToCart={handleAddToCart}  />
+            <ProductList products={headphones} title={"Наушники"} onAddToCart={handleAddToCart} />
+            <ProductList products={headphones2} title={"Беспроводные наушники"} onAddToCart={handleAddToCart} />
             <Footer />
         </div>
     );

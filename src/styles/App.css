@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     
+    
 }
 #root{
     display: flex;
@@ -13,10 +14,12 @@
     font-weight: 600;
     background-color: #EAEAEA;
     
+    
 }
 .App{
     width: 1110px;
     background-color: #EAEAEA;
+
 }
 .product-list-title{
     font-size: 20px;
@@ -89,4 +92,10 @@
 }
 .buy-button:hover{
     color: #939393;
+}
+.cart{
+   
+}
+.catalog{
+
 }

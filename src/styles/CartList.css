@@ -1,0 +1,39 @@
+.cart-list{
+    display: grid;
+    grid-column: 2fr 1fr;
+    min-height: 400px;
+}
+.cards{
+    grid-column-start: 1;
+    min-width: 696px;
+}
+.summary{
+    grid-column-start: 2;
+    display: flex;
+
+}
+.summary .summary-card{
+    width: 350px;
+    height: 120px;
+    border-radius: 30px;
+    background: white;
+}
+.summary .summary-card .summary-count{
+    display: flex;
+    justify-content: space-between;
+    margin: 22px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.summary .summary-card .checkout-button{
+    width: 350px;
+    height: 65px;
+    border-radius: 20px;
+    background: #101010;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+}
+.summary .summary-card .checkout-button:hover{
+    background: #393939;
+}
