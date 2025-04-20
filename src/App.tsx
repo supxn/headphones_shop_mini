@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import "./styles/App.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Catalog from './pages/Catalog';
+import {Catalog} from './pages/Catalog';
 import {Cart} from './pages/Cart';
 
-const App = () => {
+export const App = () => {
   const [cartCounter, setCartCounter] = useState(0);
   return (
     <div className="App">
@@ -22,4 +22,3 @@ const App = () => {
   );
 }
 
-export default App;

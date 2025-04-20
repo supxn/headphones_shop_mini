@@ -7,7 +7,6 @@ interface PostListProps {
     onAddToCart: (product: Product) => void;
 }
 export const ProductList: React.FC<PostListProps> = ({ products, title, onAddToCart }) => {
-
     return (
         <div>
             <h2 className="product-list-title">{title}</h2>
@@ -19,7 +18,6 @@ export const ProductList: React.FC<PostListProps> = ({ products, title, onAddToC
                         onAddToCart={onAddToCart} />
                 )}
             </div>
-
         </div>
     )
 }

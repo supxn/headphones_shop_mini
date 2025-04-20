@@ -10,7 +10,6 @@ export const Footer = () => {
     const handleLanguageChange = (lang: 'Рус' | 'Eng') => {
         setActiveLanguage(lang);
     };
-
     return (
         <div className={classes.footerArea}>
             <span className={classes.footerLogo}>QPICK</span>

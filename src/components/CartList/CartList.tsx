@@ -11,7 +11,6 @@ export const CartList = ({ cartCounter, setCartCounter }: CartProps) => {
     const savedCart = JSON.parse(sessionStorage.getItem('cart') || '[]');
     setCartProducts(savedCart);
   }, []);
-
   useEffect(() => {
     const newTotal = cartProducts.reduce(
       (sum, product) => sum + product.price * product.quantity, 0
@@ -22,7 +21,6 @@ export const CartList = ({ cartCounter, setCartCounter }: CartProps) => {
     setCartCounter(newCount)
     setTotalPrice(newTotal);
   }, [cartProducts]);
-
   const handleQuantityChange = (productId: number, newQuantity: number) => {
     const updatedCart = cartProducts.map(product =>
       product.id === productId ? { ...product, quantity: Math.max(1, newQuantity) } : product
@@ -30,13 +28,11 @@ export const CartList = ({ cartCounter, setCartCounter }: CartProps) => {
     setCartProducts(updatedCart);
     sessionStorage.setItem('cart', JSON.stringify(updatedCart));
   };
-
   const handleRemoveItem = (productId: number) => {
     const updatedCart = cartProducts.filter(product => product.id !== productId);
     setCartProducts(updatedCart);
     sessionStorage.setItem('cart', JSON.stringify(updatedCart));
   };
-
   return (
     <div className="cart-list">
       <div className="cards">
@@ -50,7 +46,6 @@ export const CartList = ({ cartCounter, setCartCounter }: CartProps) => {
           quantity={product.quantity}
           onQuantityChange={(newQty: number) => handleQuantityChange(product.id, newQty)}
           onRemove={() => handleRemoveItem(product.id)}
-      
           />
         )}
       </div>

@@ -6,9 +6,9 @@ import { Product, CartProduct, CartProps } from '../types';
 import { headphones, headphones2 } from '../projectdata/productdata'
 import "../styles/App.css";
 
-const Catalog: React.FC<CartProps> = ({ cartCounter, setCartCounter }) => {
+export const Catalog: React.FC<CartProps> = ({ cartCounter, setCartCounter }) => {
     const addToCart = (product: CartProduct) => {
-        const currentCart = JSON.parse(sessionStorage.getItem('cart') || '[]');
+        const currentCart = JSON.parse(sessionStorage.getItem('cart') || '[]') as CartProduct[];
         const existingItem = currentCart.find((item: { id: number; }) => item.id === product.id);
         if (existingItem) {
             const updatedCart = currentCart.map((item: { id: number; quantity: number; }) =>
@@ -40,5 +40,3 @@ const Catalog: React.FC<CartProps> = ({ cartCounter, setCartCounter }) => {
         </div>
     );
 };
-
-export default Catalog;
