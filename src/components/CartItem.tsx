@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/CartItem.css'
-import deleteicon from "../public/assets/Vector.svg";
-
+import deleteicon from "../projectdata/assets/Vector.svg";
 
 interface CartItemProps {
     id: number;
@@ -12,7 +11,6 @@ interface CartItemProps {
     onQuantityChange: (newQuantity: number) => void;
     onRemove: () => void;
 }
-
 const CartItem: React.FC<CartItemProps> = ({ 
     id,
     title, 

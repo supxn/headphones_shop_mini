@@ -1,9 +1,9 @@
-import productphoto from "../public/assets/product-photo-1.png";
-import productphoto2 from "../public/assets/headphones2.png";
-import productphoto3 from "../public/assets/headphones3.png";
-import productphoto4 from "../public/assets/headphones4.png";
-import productphoto5 from "../public/assets/headphones5.png";
-import productphoto6 from "../public/assets/headphones6.png";
+import productphoto from "./assets/product-photo-1.png";
+import productphoto2 from "./assets/headphones2.png";
+import productphoto3 from "./assets/headphones3.png";
+import productphoto4 from "./assets/headphones4.png";
+import productphoto5 from "./assets/headphones5.png";
+import productphoto6 from "./assets/headphones6.png";
 import {Product} from '../types';
 
 export const headphones: Product[] = [
