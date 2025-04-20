@@ -5,7 +5,7 @@ import cart_logo from "./media/cart-vector.svg"
 import { Link } from 'react-router-dom';
 
 
-const Header = function (props: any) {
+const Header = (props: any) => {
     return (
         <div className={classes.headerArea}>
             <Link to="/" className={classes.logobutton}>

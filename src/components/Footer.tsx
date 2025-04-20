@@ -5,7 +5,7 @@ import vkIcon from "./media/VK.svg"
 import whatsappIcon from "./media/Whatsapp.svg"
 import telegramIcon from "./media/Telegram.svg"
 
-const Footer = function () {
+const Footer = () => {
     const [activeLanguage, setActiveLanguage] = React.useState('Рус');
     const handleLanguageChange = (lang: 'Рус' | 'Eng') => {
         setActiveLanguage(lang);
