@@ -3,9 +3,9 @@ import classes from "./Header.module.css";
 import wishlist_logo from "../projectdata/assets/wichlist-vector.svg"
 import cart_logo from "../projectdata/assets/cart-vector.svg"
 import { Link } from 'react-router-dom';
+import {CartProps} from '../types'
 
-
-const Header = (props: any) => {
+export const Header: React.FC<CartProps> = ({cartCounter, setCartCounter}) => {
     return (
         <div className={classes.headerArea}>
             <Link to="/" className={classes.logobutton}>
@@ -24,7 +24,7 @@ const Header = (props: any) => {
                     <Link to="/cart" className={classes.navbutton}>
                         <div className={classes.imgContainer}>
                             <img src={cart_logo} alt="корзина" />
-                            <div className={classes.circle}>{props.cartCounter}</div>
+                            <div className={classes.circle}>{cartCounter}</div>
                         </div>
                     </Link>
                 </li>
@@ -32,4 +32,3 @@ const Header = (props: any) => {
         </div>
     )
 }
-export default Header;

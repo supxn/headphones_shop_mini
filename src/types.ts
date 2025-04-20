@@ -7,7 +7,14 @@ export interface Product {
     rate?: number;
     currencySign: string;
 }
-
-export interface CartProduct extends Pick<Product, 'id' | 'title' | 'price'| 'img'> {
-    // Дополнительные поля для корзины при необходимости
-}
+export interface CartProduct {
+    id: number;
+    title: string;
+    price: number;
+    img: string;
+    quantity: number;
+  }
+export interface CartProps {
+    cartCounter: number;
+    setCartCounter: React.Dispatch<React.SetStateAction<number>>;
+  }

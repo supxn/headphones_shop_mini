@@ -1,31 +1,17 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import CartItem from "../components/CartItem";
+import {CartItem} from "../components/CartItem";
 import '../styles/CartList.css'
+import {CartProps, CartProduct} from '../types'
 
-interface CartProduct {
-  id: number;
-  title: string;
-  price: number;
-  img: string;
-  quantity: number;
-}
-export interface CartProps {
-    cartCounter: number;
-    setCartCounter: React.Dispatch<React.SetStateAction<number>>;
-  }
-
-const CartList = ({ cartCounter, setCartCounter }: CartProps) => {
-
+export const CartList = ({ cartCounter, setCartCounter }: CartProps) => {
   const [cartProducts, setCartProducts] = useState<CartProduct[]>([]);
-  const [totalPrice, setTotalPrice] = useState(0);
-
+  const [totalPrice, setTotalPrice] = useState<number>(0);
   useEffect(() => {
     const savedCart = JSON.parse(sessionStorage.getItem('cart') || '[]');
     setCartProducts(savedCart);
   }, []);
 
-  // Расчет общей суммы при изменении корзины
   useEffect(() => {
     const newTotal = cartProducts.reduce(
       (sum, product) => sum + product.price * product.quantity, 0
@@ -54,7 +40,7 @@ const CartList = ({ cartCounter, setCartCounter }: CartProps) => {
   return (
     <div className="cart-list">
       <div className="cards">
-        {cartProducts.map((product: any, index: number) =>
+        {cartProducts.map((product: CartProduct, index: number) =>
           <CartItem
           key={product.id}
           id={product.id}
@@ -80,4 +66,3 @@ const CartList = ({ cartCounter, setCartCounter }: CartProps) => {
     </div>
   )
 }
-export default CartList;

@@ -5,8 +5,7 @@ interface ProductCardProps {
   onAddToCart: (product: Product) => void;
 }
 
-const ProductCard : React.FC<ProductCardProps> = ({product, onAddToCart })=>{
-
+export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
   return (
     <div className="product-card">
 
@@ -34,4 +33,3 @@ const ProductCard : React.FC<ProductCardProps> = ({product, onAddToCart })=>{
     </div>
   )
 }
-export default ProductCard;

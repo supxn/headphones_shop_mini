@@ -5,8 +5,8 @@ import vkIcon from "../projectdata/assets/VK.svg"
 import whatsappIcon from "../projectdata/assets/Whatsapp.svg"
 import telegramIcon from "../projectdata/assets/Telegram.svg"
 
-const Footer = () => {
-    const [activeLanguage, setActiveLanguage] = React.useState('Рус');
+export const Footer = () => {
+    const [activeLanguage, setActiveLanguage] = React.useState<string>('Рус');
     const handleLanguageChange = (lang: 'Рус' | 'Eng') => {
         setActiveLanguage(lang);
     };
@@ -38,4 +38,3 @@ const Footer = () => {
         </div>
     )
 }
-export default Footer;

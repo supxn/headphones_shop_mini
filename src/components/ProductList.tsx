@@ -1,15 +1,12 @@
 import React from 'react';
-import ProductCard from "./ProductCard";
+import { ProductCard } from "./ProductCard";
 import { Product } from '../types';
-
-
-
 interface PostListProps {
     products: Product[];
     title: string;
     onAddToCart: (product: Product) => void;
 }
-const ProductList: React.FC<PostListProps> = ({ products, title, onAddToCart }) => {
+export const ProductList: React.FC<PostListProps> = ({ products, title, onAddToCart }) => {
 
     return (
         <div>
@@ -17,13 +14,12 @@ const ProductList: React.FC<PostListProps> = ({ products, title, onAddToCart }) 
             <div className="product-list">
                 {products.map((product, index) =>
                     <ProductCard
-                    key={product.id}
-                    product={product}
-                    onAddToCart={onAddToCart}/>
+                        key={product.id}
+                        product={product}
+                        onAddToCart={onAddToCart} />
                 )}
             </div>
 
         </div>
     )
 }
-export default ProductList;

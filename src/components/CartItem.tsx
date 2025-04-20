@@ -11,7 +11,7 @@ interface CartItemProps {
     onQuantityChange: (newQuantity: number) => void;
     onRemove: () => void;
 }
-const CartItem: React.FC<CartItemProps> = ({ 
+export const CartItem: React.FC<CartItemProps> = ({ 
     id,
     title, 
     price, 
@@ -20,7 +20,6 @@ const CartItem: React.FC<CartItemProps> = ({
     onQuantityChange,
     onRemove
 }) => {
-
     return (
 <div className="cartItem">
 
@@ -47,4 +46,3 @@ const CartItem: React.FC<CartItemProps> = ({
 </div>
     )
 }
-export default CartItem;
