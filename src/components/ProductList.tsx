@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCard from "./ProductCard";
-import { Product, CartProduct } from '../types';
+import { Product } from '../types';
 
 
 

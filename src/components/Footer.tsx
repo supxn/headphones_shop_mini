@@ -1,9 +1,9 @@
 import React from 'react';
 import classes from './Footer.module.css'
-import languageIcon from "./media/language.svg"
-import vkIcon from "./media/VK.svg"
-import whatsappIcon from "./media/Whatsapp.svg"
-import telegramIcon from "./media/Telegram.svg"
+import languageIcon from "../public/assets/language.svg"
+import vkIcon from "../public/assets/VK.svg"
+import whatsappIcon from "../public/assets/Whatsapp.svg"
+import telegramIcon from "../public/assets/Telegram.svg"
 
 const Footer = () => {
     const [activeLanguage, setActiveLanguage] = React.useState('Рус');

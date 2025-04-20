@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from "./Header.module.css";
-import wishlist_logo from "./media/wichlist-vector.svg"
-import cart_logo from "./media/cart-vector.svg"
+import wishlist_logo from "../public/assets/wichlist-vector.svg"
+import cart_logo from "../public/assets/cart-vector.svg"
 import { Link } from 'react-router-dom';
 
 

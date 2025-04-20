@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import '../styles/CartItem.css'
-import productphoto2 from "../components/media/headphones2.png";
-import deleteicon from "../components/media/Vector.svg";
+import deleteicon from "../public/assets/Vector.svg";
 
 
 interface CartItemProps {
