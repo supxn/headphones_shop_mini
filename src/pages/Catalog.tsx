@@ -1,8 +1,7 @@
-import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
-import { ProductList } from "../components/ProductList";
+import { Header } from "../components/Header/Header";
+import { Footer } from "../components/Footer/Footer";
+import { ProductList } from "../components/ProductList/ProductList";
 import { Product, CartProduct, CartProps } from '../types';
 import { headphones, headphones2 } from '../projectdata/productdata'
 import "../styles/App.css";
@@ -11,7 +10,6 @@ const Catalog: React.FC<CartProps> = ({ cartCounter, setCartCounter }) => {
     const addToCart = (product: CartProduct) => {
         const currentCart = JSON.parse(sessionStorage.getItem('cart') || '[]');
         const existingItem = currentCart.find((item: { id: number; }) => item.id === product.id);
-
         if (existingItem) {
             const updatedCart = currentCart.map((item: { id: number; quantity: number; }) =>
                 item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item);

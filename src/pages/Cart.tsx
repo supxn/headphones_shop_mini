@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
-import { CartList } from "../components/CartList";
+import { Header } from "../components/Header/Header";
+import { Footer } from "../components/Footer/Footer";
+import { CartList } from "../components/CartList/CartList";
 import "../styles/App.css";
 import { CartProps } from '../types'
 

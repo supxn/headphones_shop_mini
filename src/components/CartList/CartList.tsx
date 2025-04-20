@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import {CartItem} from "../components/CartItem";
-import '../styles/CartList.css'
-import {CartProps, CartProduct} from '../types'
+import {CartItem} from "../CartItem/CartItem";
+import './CartList.css'
+import {CartProps, CartProduct} from '../../types'
 
 export const CartList = ({ cartCounter, setCartCounter }: CartProps) => {
   const [cartProducts, setCartProducts] = useState<CartProduct[]>([]);

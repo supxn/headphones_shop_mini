@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/CartItem.css'
-import deleteicon from "../projectdata/assets/Vector.svg";
+import './CartItem.css'
+import deleteicon from "../../projectdata/assets/Vector.svg";
 
 interface CartItemProps {
     id: number;

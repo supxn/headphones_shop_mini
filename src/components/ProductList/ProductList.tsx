@@ -1,6 +1,6 @@
 import React from 'react';
-import { ProductCard } from "./ProductCard";
-import { Product } from '../types';
+import { ProductCard } from "../ProductCard/ProductCard";
+import { Product } from '../../types';
 interface PostListProps {
     products: Product[];
     title: string;
